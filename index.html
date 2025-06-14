@@ -27,6 +27,8 @@
       opacity: 0;
       transition: opacity 1s ease-in-out;
       z-index: 1;
+      backface-visibility: hidden;
+      transform: translateZ(0);
     }
     .slide.active {
       opacity: 1;
@@ -41,7 +43,7 @@
       background-color: rgba(0, 0, 0, 1); /* Was: black */
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 1s ease-in-out;
       z-index: 2;
     }
 
