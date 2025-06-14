@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="header&footer.css">
+  <title>Science Instrument Center</title>
+  <style>
+
+    .banner{
+      height: 12rem;
+      width: 100%;
+      background-color: black;
+      z-index: 2;
+      border: 1px solid black;
+      background: url('lab-banner.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+       color: white;
+    }
+
+    #tables{
+        padding: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px 16px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background-color: #00274d;
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f7fb;
+    }
+
+    tr:hover {
+      background-color: #e6f2ff;
+    }
+
+    caption {
+      caption-side: top;
+      font-size: 1.5rem;
+      font-weight: 600;
+      padding: 1rem 0;
+      color: #00274d;
+    }
+
+    .guidelines {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      margin: auto;
+      justify-content: center;
+    }
+
+    .guidelines h2 {
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+    }
+
+    .guidelines h3 {
+      color: #34495e;
+      margin-top: 30px;
+    }
+
+    .guidelines ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .guidelines ol {
+      padding-left: 20px;
+    }
+
+    .guidelines li {
+      margin-bottom: 10px;
+    }
+
+    .guidelines a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .guidelines.a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <nav>
+    <div class="logo">Instrument Center</div>
+    <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+      <a href="Services.html" class="dropdown-toggle">Services ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="Services.html#water-quality">Water Quality</a></li>
+        <li><a href="Services.html#soil-tests">Soil Tests</a></li>
+        <li><a href="Services.html#microbiological">Microbiological</a></li>
+        <li><a href="Services.html#molecular-biological">Molecular Bio</a></li>
+        <li><a href="Services.html#toxin-detection">Toxin Detection</a></li>
+        <li><a href="Services.html#pure-cultures">Pure Cultures</a></li>
+        <li><a href="Services.html#ft-ir-analysis">FT-IR Analysis</a></li>
+      </ul>
+    </li>
+      <li><a href="About.html">About</a></li>
+    </ul>
+  </nav>
+
+
+  <div class="banner">
+    <h1 style="color: white;">Laboratory Services</h1>
+  </div>
+
+  <div id="tables">
+    <div id="water-quality">
+        <table>
+            <caption>Water Quality Testing Parameters</caption>
+            <thead>
+              <tr>
+                <th>Test Code</th>
+                <th>Parameter</th>
+                <th>Analytical Method/Instrument Brand name</th>
+                <th>Price/LKR/sample*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>WQ-1</td><td>pH</td><td>pH Electrode/Bench-top pH meter, Hanna</td><td>100</td></tr>
+              <tr><td>WQ-2</td><td>pH/Electrical Conductivity/Salinity/Oxidation Reduction Potential/Total Dissolved Solids/Turbidity</td><td>Multi-parameter probes/ Multiparameter, Hanna</td><td>100/parameter</td></tr>
+              <tr><td>WQ-3</td><td>Phosphate-Phosphorus (Low-Range)</td><td>Ascorbic acid method/ Phosphate photometer, YSI</td><td>600</td></tr>
+              <tr><td>WQ-4</td><td>Total Phosphorus</td><td>Ascorbic acid method/ Spectrophotometer, Thermo Fisher</td><td>600</td></tr>
+              <tr><td>WQ-5</td><td>Ammonium-Nitrogen</td><td>Ammonium probe/ Multiparameter, Hanna</td><td>300</td></tr>
+              <tr><td>WQ-6</td><td>Nitrite-Nitrogen</td><td>Colorimetric method/ Spectrophotometer, Thermo Fisher</td><td>500</td></tr>
+              <tr><td>WQ-7</td><td>Nitrate-Nitrogen</td><td>Nitrate probe/ Multiparameter, Hanna</td><td>300</td></tr>
+              <tr><td>WQ-8</td><td>Nitrate-Nitrogen</td><td>Colorimetric method/ Spectrophotometer, Thermo Fisher</td><td>700</td></tr>
+              <tr><td>WQ-9</td><td>Total-Nitrogen</td><td>Colorimetric method/ Spectrophotometer, Thermo Fisher</td><td>1000</td></tr>
+              <tr><td>WQ-10</td><td>Kjeldahl-Nitrogen</td><td>Total Kjeldahl nitrogen/Kjeldahl method</td><td>600</td></tr>
+              <tr><td>WQ-11</td><td>Total Chlorophyll</td><td>Chlorophyll Sensor/TAL-PC sensor, YSI</td><td>400</td></tr>
+              <tr><td>WQ-12</td><td>Total Chlorophyll</td><td>Acetone method/ Spectrophotometer, Thermo Fisher</td><td>500</td></tr>
+              <tr><td>WQ-13</td><td>Total Carotenoids</td><td>Acetone method/ Spectrophotometer, Thermo Fisher</td><td>500</td></tr>
+              <tr><td>WQ-14</td><td>Phycocyanin</td><td>Phycocyanin Sensor/TAL-PC sensor, YSI</td><td>400</td></tr>
+            </tbody>
+          </table>
+          <p><small>
+            * Concession for postgraduate students of University of Ruhuna: 20% of the total cost
+          </small></p>
+    </div>
+    <div id="soil-tests">
+        <table>
+            <caption><strong>Soil Tests</strong></caption>
+            <thead>
+              <tr>
+                <th>Test Code</th>
+                <th>Parameter</th>
+                <th>Analytical Method/Instrument</th>
+                <th>Price/LKR/sample*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SA-1</td>
+                <td>pH</td>
+                <td>pH electrode/Hanna</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>SA-2</td>
+                <td>pH/Electrical Conductivity/Salinity/Oxidation Reduction Potential</td>
+                <td>Multi-parameter probes/ Multiparameter, Hanna</td>
+                <td>100/per parameter</td>
+              </tr>
+              <tr>
+                <td>SA-3</td>
+                <td>Total Phosphorus</td>
+                <td>Ascorbic acid method Spectrophotometer, Thermo Fisher</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>SA-4</td>
+                <td>Nitrite-Nitrogen</td>
+                <td>Colorimetric method Spectrophotometer, Thermo Fisher</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>SA-5</td>
+                <td>Nitrate-Nitrogen</td>
+                <td>Nitrate probe/ Multiparameter, Hanna</td>
+                <td>300</td>
+              </tr>
+              <tr>
+                <td>SA-6</td>
+                <td>Nitrate-Nitrogen</td>
+                <td>Colorimetric method/ Spectrophotometer, Thermo Fisher</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>SA-7</td>
+                <td>Total-Nitrogen</td>
+                <td>Colorimetric method/ Spectrophotometer, Thermo Fisher</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>SA-8</td>
+                <td>Total Kjeldahl-Nitrogen</td>
+                <td>Kjeldahl method</td>
+                <td>1500</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><small>
+            * Concession for postgraduate students of University of Ruhuna: 20% of the total cost
+          </small></p>
+    </div>
+    <div id="microbiological">
+        <table>
+            <caption><strong>Microbiological Tests</strong></caption>
+            <thead>
+              <tr>
+                <th>Test Code</th>
+                <th>Test</th>
+                <th>Analytical Method</th>
+                <th>Price/LKR/sample*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>MB-1</td><td>Total coliform</td><td>Presumptive coliform test/MPN method</td><td>1500</td></tr>
+              <tr><td>MB-2</td><td>Fecal coliform</td><td>Presumptive coliform test/MPN method</td><td>1500</td></tr>
+              <tr><td>MB-3</td><td><i>Escherichia coli</i> confirmation test</td><td>Presumptive coliform test/MPN method/Biochemical tests/Gram’s staining</td><td>4000</td></tr>
+              <tr><td>MB-4</td><td>Standard Plate Count</td><td>Serial dilution/Pour-plate method/CFU calculation</td><td>5000</td></tr>
+              <tr><td>MB-5</td><td>Gram’s staining</td><td>Gram’s Staining</td><td>700</td></tr>
+              <tr><td>MB-6</td><td>Carbohydrate Fermentation Test</td><td>Qualitative test/ Bergey’s Manual</td><td>3000</td></tr>
+              <tr><td>MB-7</td><td>Indole Test</td><td>Qualitative test/ Bergey’s Manual</td><td>1500</td></tr>
+              <tr><td>MB-8</td><td>Methyl Red Test</td><td>Qualitative test/ Bergey’s Manual</td><td>1500</td></tr>
+              <tr><td>MB-9</td><td>VP Test</td><td>Qualitative test/ Bergey’s Manual</td><td>1500</td></tr>
+              <tr><td>MB-10</td><td>Citrate Test</td><td>Qualitative test/ Bergey’s Manual</td><td>2000</td></tr>
+              <tr><td>MB-11</td><td>Oxidation/Fermentation Test</td><td>Qualitative test/ Bergey’s Manual</td><td>4000</td></tr>
+              <tr><td>MB-12</td><td>Nitrate Reduction Test</td><td>Qualitative test/ Bergey’s Manual</td><td>4000</td></tr>
+              <tr><td>MB-13</td><td>Urease Test</td><td>Qualitative test/ Bergey’s Manual</td><td>1500</td></tr>
+              <tr><td>MB-14</td><td>Arginine Test</td><td>Qualitative test/ Bergey’s Manual</td><td>2000</td></tr>
+              <tr><td>MB-15</td><td>Catalase Test</td><td>Qualitative test/ Bergey’s Manual</td><td>1000</td></tr>
+              <tr><td>MB-16</td><td>Indole Acetic Acid</td><td>Salkowski/Spectrophotometer</td><td>4000</td></tr>
+              <tr><td>MB-17</td><td>Antibiotic Sensitivity Test <br>[selected antibiotics only]</td><td>Qualitative test/ Kirby-Bauer method</td><td>3000</td></tr>
+            </tbody>
+          </table>
+          <p><small>
+            * Concession for postgraduate students of University of Ruhuna: 10% of the total cost
+          </small></p>
+    </div>
+    <div id="molecular-biological">
+        <table>
+            <caption><strong>Molecular Biological Tests</strong></caption>
+            <thead>
+              <tr>
+                <th>Test Code</th>
+                <th>Test</th>
+                <th>Method</th>
+                <th>Price/LKR/sample*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ML-1</td>
+                <td>
+                  Bacterial 16S rRNA gene amplification<br>
+                  <ul>
+                    <li>Culture establishment – 2500 LKR</li>
+                    <li>DNA extraction – 2500 LKR</li>
+                    <li>PCR and gel electrophoresis – 5000 LKR</li>
+                  </ul>
+                </td>
+                <td>Modified phenol-chloroform DNA extraction/PCR with universal primers</td>
+                <td>10,000</td>
+              </tr>
+              <tr>
+                <td>ML-2</td>
+                <td>
+                  Fungal ITS region amplification<br>
+                  <ul>
+                    <li>Culture establishment – 4000 LKR</li>
+                    <li>DNA extraction – 6000 LKR</li>
+                    <li>PCR and gel electrophoresis – 5000 LKR</li>
+                  </ul>
+                </td>
+                <td>Modified phenol-chloroform DNA extraction/PCR with universal primers</td>
+                <td>15,000</td>
+              </tr>
+              <tr>
+                <td>ML-3</td>
+                <td>PCR Product Purification</td>
+                <td>Commercial kit</td>
+                <td>5000</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><small>
+            * Concession for postgraduate students of University of Ruhuna: 10% of the total cost
+          </small></p>
+          
+    </div>
+    <div id="toxin-detection">
+        <table>
+            <caption><strong>Toxin Detection Tests</strong></caption>
+            <thead>
+              <tr>
+                <th>Test Code</th>
+                <th>Test</th>
+                <th>Analytical Method</th>
+                <th>Price/LKR*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TB-1</td>
+                <td>Quantification of Microcystin</td>
+                <td>ELISA</td>
+                <td>30,000<sup>*</sup></td>
+              </tr>
+              <tr>
+                <td>TB-2</td>
+                <td>Quantification of Cylindrospermopsin</td>
+                <td>ELISA</td>
+                <td>30,000<sup>*</sup></td>
+              </tr>
+              <tr>
+                <td>TB-3</td>
+                <td>Quantification of Aflatoxin</td>
+                <td>ELISA</td>
+                <td>50,000<sup>b</sup></td>
+              </tr>
+            </tbody>
+          </table>
+          <p><small>
+            * Concession for postgraduate students of University of Ruhuna: 10% of the total cost<br>
+            # Minimum number of samples to conduct the test is 5 samples<br>
+            <sup>a</sup> For each additional sample, 6000 LKR will be charged.<br>
+            <sup>b</sup> For each additional sample, 9000 LKR will be charged.
+          </small></p>
+          
+    </div>
+    <div id="pure-cultures">
+        <table>
+            <caption><strong>Pure Cultures</strong></caption>
+            <thead>
+              <tr>
+                <th>Culture Code</th>
+                <th>Type of Culture</th>
+                <th>Price/LKR/culture</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PC-1</td>
+                <td>Bacteria [From available cultures in the collection]</td>
+                <td>1000</td>
+              </tr>
+              <tr>
+                <td>PC-2</td>
+                <td>Cyanobacteria and microalgae [From available cultures in the collection]</td>
+                <td>5000</td>
+              </tr>
+              <tr>
+                <td>PC-3</td>
+                <td>Fungi [From available cultures in the collection]</td>
+                <td>4000</td>
+              </tr>
+            </tbody>
+          </table>
+          <p><small>
+            * Concession for postgraduate students of University of Ruhuna: 20% of the total cost
+          </small></p>
+          
+    </div>
+    <div id="ft-ir-analysis">
+        <table>
+            <caption><strong>FT-IR Analysis</strong></caption>
+            <thead>
+              <tr>
+                <th>Test Code</th>
+                <th>Analytical Method</th>
+                <th colspan="4">Price/LKR/sample</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>Undergraduate (FoS/UOR)</th>
+                <th>Undergraduate (other faculties/UOR)</th>
+                <th>Postgraduate (UOR)</th>
+                <th>Other</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>FT-1</td>
+                <td>ATR mode</td>
+                <td>Free</td>
+                <td>500</td>
+                <td>800</td>
+                <td>1500</td>
+              </tr>
+            </tbody>
+          </table>
+          
+    </div>
+    <br>
+    <div class="guidelines">
+      <h2>Guidelines for Sample Submission</h2>
+      <ul>
+        <li>Contact us before sample submission</li>
+        <li>Confirm the availability of required test</li>
+        <li>Complete<a href="sample-submission-form.html" target="_blank">‘Sample Submission Form’</a></li>
+        <li>Make an appointment to deliver samples and Sample Submission Form</li>
+      </ul>
+
+      <h3>Sample Storage (when required)</h3>
+      <ol>
+        <li>More than 5 days at room temperature/refrigeration – Rs. 100 per day will be charged</li>
+        <li>More than 5 days at ultra-low temperature – Rs. 200 per day will be charged</li>
+      </ol>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Centre for Laboratory Services, Faculty of Science, University of Ruhuna</p>
+    <p><a href="About.html#contact" class="footer-link">Contact Us</a></p>
+    <p class="watermark">Created by J.G.D.S.D. Jayasinghe, DCS, UOR</p>
+  </footer>
+  <script>
+ 
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      document.body.classList.toggle('menu-open');
+    });
+  </script>
+
+</body>
+</html>

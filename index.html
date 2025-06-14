@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="header&footer.css">
+  <title>Science Instrument Center</title>
+  <style>
+    
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      max-height: 600px;
+      min-height: 300px;
+      overflow: hidden;
+    }
+
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 0;
+    }
+    .slide.active {
+      opacity: 1;
+       z-index: 2;
+    }
+
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
+      z-index: 1;
+    }
+    .overlay.show {
+      opacity: 1;
+    }
+  
+    .welcomebg {
+      background: linear-gradient(to right, #003366, #00509e);
+      color: white;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      z-index: 2;
+      box-shadow: inset 0 -3px 10px rgba(0, 0, 0, 0.3);
+    }
+    .welcomebg h2 {
+      font-weight: 300;
+      font-size: 2.2rem;
+      text-shadow: 2px 2px 4px black;
+    }
+    .maintext {
+      padding: 3rem 6rem;
+      font-size: 1.2rem;
+      background-color: white;
+      line-height: 1.8;
+      max-width: 1100px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      margin-top: -4rem;
+      position: relative;
+      z-index: 3;
+    }
+    .maintext p {
+      margin-bottom: 1.5rem;
+    }
+    .maintext a {
+      color: #00509e;
+      background-color: #e6f0ff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .maintext a:hover {
+      background-color: #00509e;
+      color: #fff;
+    }
+    .indented-list {
+      margin-left: 2rem;
+      margin-bottom: 2rem;
+      list-style-type: disc;
+    }
+    .unilogos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 2rem;
+    }
+    .unilogos img {
+      max-width: 150px;
+      max-height: 150px;
+      transition: transform 0.3s ease;
+    }
+    .unilogos img:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .unilogos {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .unilogos img {
+        max-width: 100px;
+        max-height: 100px;
+      }
+      .slider {
+        height: 40vh;
+        min-height: 200px;
+      }
+      footer {
+        font-size: 0.9rem;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Instrument Center</div>
+    <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+      <a href="Services.html" class="dropdown-toggle">Services ▾</a>
+      <ul class="dropdown-content">
+        <li><a href="Services.html#water-quality">Water Quality</a></li>
+        <li><a href="Services.html#soil-tests">Soil Tests</a></li>
+        <li><a href="Services.html#microbiological">Microbiological</a></li>
+        <li><a href="Services.html#molecular-biological">Molecular Bio</a></li>
+        <li><a href="Services.html#toxin-detection">Toxin Detection</a></li>
+        <li><a href="Services.html#pure-cultures">Pure Cultures</a></li>
+        <li><a href="Services.html#ft-ir-analysis">FT-IR Analysis</a></li>
+      </ul>
+    </li>
+      <li><a href="About.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="slider">
+    <div class="overlay" id="overlay"></div>
+    <div class="slide active" style="background-image: url('home image1.jpg');"></div>
+    <div class="slide" style="background-image: url('home image 2.jpg');"></div>
+    <div class="slide" style="background-image: url('home image3.jpg');"></div>
+  </div>
+
+  <section class="welcomebg" id="welcome">
+    <div class="unilogos">
+      <img src="uor logo.png" alt="University of Ruhuna Logo">
+      <img src="scifaclogo.png" alt="Faculty of Science Logo">
+    </div>
+    <h2>Welcome to the Centre for Laboratory Services,<br>Faculty of Science,<br>University of Ruhuna<br><br></h2>
+  </section>
+
+  <section class="maintext">
+    <p>CLS is a laboratory service facility offering analytical services to researchers in academia, industry, and both public and private sectors. All services are supervised by academic staff from the Faculty of Science.</p>
+    <p><strong>Our services include:</strong></p>
+    <ul class="indented-list">
+      <li><a href="Services.html#water-quality">Water quality analysis</a></li>
+      <li><a href="Services.html#soil-tests">Standard soil chemical analysis</a></li>
+      <li><a href="Services.html#microbiological">Standard microbiological tests for soil and water</a></li>
+     <li><a href="Services.html#molecular-biological">PCR for bacteria and fungi identification</a></li>
+      <li><a href="Services.html#toxin-detection">Cyanotoxin detection and quantification</a></li>
+      <li><a href="Services.html#toxin-detection">Aflatoxin detection and quantification</a></li>
+    </ul>
+
+    <p><strong>Additional offerings:</strong></p>
+    <ul class="indented-list">
+      <li><a href="Services.html#pure-cultures">Pure cultures of bacteria and cyanobacteria</a></li>
+      <li><a href="Services.html#pure-cultures">Pure cultures of fungi</a></li>
+    </ul>
+
+    <p>A service charge applies to all users. Concession rates are available for undergraduate (FT-IR analysis only) and postgraduate students enrolled at the University of Ruhuna (UoR).</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Centre for Laboratory Services, Faculty of Science, University of Ruhuna</p>
+    <p><a href="About.html#contact" class="footer-link">Contact Us</a></p>
+    <p class="watermark">Created by J.G.D.S.D. Jayasinghe, DCS, UOR</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('show');
+      document.body.classList.toggle('menu-open');
+    });
+
+    const slides = document.querySelectorAll('.slide');
+    const overlay = document.getElementById('overlay');
+    let current = 0;
+    function showNextSlide() {
+      overlay.classList.add('show');
+      setTimeout(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+        overlay.classList.remove('show');
+      }, 500);
+    }
+    setInterval(showNextSlide, 10000);
+
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
+    dropdownToggle.addEventListener('click', (e) => {
+      // Only toggle on small screens
+      if (window.innerWidth <= 768) {
+        e.preventDefault(); // Prevent page redirect
+        dropdown.classList.toggle('open');
+      }
+      });
+  </script>
+</body>
+</html>
