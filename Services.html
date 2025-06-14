@@ -9,12 +9,12 @@
   <style>
 
     .banner{
-      height: 12rem;
+      height: 10rem;
       width: 100%;
       background-color: black;
       z-index: 2;
       border: 1px solid black;
-      background: url('lab-banner.jpg') center/cover no-repeat;
+      /*background: url('lab-banner.jpg') center/cover no-repeat;*/
       display: flex;
       align-items: center;
       justify-content: center;
@@ -23,6 +23,12 @@
 
     #tables{
         padding: 2rem;
+        
+    }
+    .table-container{
+      padding: 0rem;
+      overflow-x: auto;
+      max-width: 100%;
     }
 
     table {
@@ -104,6 +110,11 @@
     .guidelines.a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 768px){
+      #tables{
+        padding: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -137,7 +148,7 @@
 
   <div id="tables">
     <div id="water-quality">
-        <table>
+        <div class="table-container"><table>
             <caption>Water Quality Testing Parameters</caption>
             <thead>
               <tr>
@@ -164,11 +175,13 @@
               <tr><td>WQ-14</td><td>Phycocyanin</td><td>Phycocyanin Sensor/TAL-PC sensor, YSI</td><td>400</td></tr>
             </tbody>
           </table>
+        </div>
           <p><small>
             * Concession for postgraduate students of University of Ruhuna: 20% of the total cost
           </small></p>
     </div>
     <div id="soil-tests">
+      <div class="table-container">
         <table>
             <caption><strong>Soil Tests</strong></caption>
             <thead>
@@ -230,11 +243,13 @@
               </tr>
             </tbody>
           </table>
+      </div> 
           <p><small>
             * Concession for postgraduate students of University of Ruhuna: 20% of the total cost
           </small></p>
     </div>
     <div id="microbiological">
+      <div class="table-container">  
         <table>
             <caption><strong>Microbiological Tests</strong></caption>
             <thead>
@@ -265,11 +280,13 @@
               <tr><td>MB-17</td><td>Antibiotic Sensitivity Test <br>[selected antibiotics only]</td><td>Qualitative test/ Kirby-Bauer method</td><td>3000</td></tr>
             </tbody>
           </table>
+        </div>  
           <p><small>
             * Concession for postgraduate students of University of Ruhuna: 10% of the total cost
           </small></p>
     </div>
     <div id="molecular-biological">
+      <div class="table-container">
         <table>
             <caption><strong>Molecular Biological Tests</strong></caption>
             <thead>
@@ -315,12 +332,14 @@
               </tr>
             </tbody>
           </table>
+        </div> 
           <p><small>
             * Concession for postgraduate students of University of Ruhuna: 10% of the total cost
           </small></p>
           
     </div>
     <div id="toxin-detection">
+      <div class="table-container">
         <table>
             <caption><strong>Toxin Detection Tests</strong></caption>
             <thead>
@@ -352,6 +371,7 @@
               </tr>
             </tbody>
           </table>
+        </div>
           <p><small>
             * Concession for postgraduate students of University of Ruhuna: 10% of the total cost<br>
             # Minimum number of samples to conduct the test is 5 samples<br>
@@ -361,6 +381,7 @@
           
     </div>
     <div id="pure-cultures">
+      <div class="table-container">
         <table>
             <caption><strong>Pure Cultures</strong></caption>
             <thead>
@@ -388,12 +409,14 @@
               </tr>
             </tbody>
           </table>
+        </div>
           <p><small>
             * Concession for postgraduate students of University of Ruhuna: 20% of the total cost
           </small></p>
           
     </div>
     <div id="ft-ir-analysis">
+      <div class="table-container">
         <table>
             <caption><strong>FT-IR Analysis</strong></caption>
             <thead>
@@ -422,6 +445,7 @@
               </tr>
             </tbody>
           </table>
+        </div>  
           
     </div>
     <br>
