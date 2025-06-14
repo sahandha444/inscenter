@@ -226,16 +226,37 @@
     }
     setInterval(showNextSlide, 10000);
 
-    const dropdownToggle = document.querySelector('.dropdown-toggle');
-    const dropdown = document.querySelector('.dropdown');
-
-    dropdownToggle.addEventListener('click', (e) => {
-      // Only toggle on small screens
-      if (window.innerWidth <= 768) {
-        e.preventDefault(); // Prevent page redirect
-        dropdown.classList.toggle('open');
+  const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  if (isTouch) {
+    const serviceLink = document.querySelector('.dropdown > .dropdown-toggle');
+    let firstTap = true;
+    serviceLink.addEventListener('click', function (e) {
+      const dropdown = this.nextElementSibling;
+      if (firstTap) {
+        e.preventDefault(); // Prevent navigation
+        dropdown.style.maxHeight = dropdown.scrollHeight + 'px'; // Open dropdown
+        dropdown.style.opacity = '1';
+        dropdown.style.pointerEvents = 'auto';
+        firstTap = false;
+        // Optional: close other open dropdowns if needed
+        setTimeout(() => {
+          window.addEventListener('click', function clearTap(ev) {
+            if (!serviceLink.contains(ev.target)) {
+              firstTap = true;
+              dropdown.style.maxHeight = null;
+              dropdown.style.opacity = '0';
+              dropdown.style.pointerEvents = 'none';
+              window.removeEventListener('click', clearTap);
+            }
+          });
+        }, 0);
+      } else {
+        // On second tap, allow navigation
+        window.location.href = this.getAttribute('href');
       }
-      });
+    });
+  }
+
   </script>
 </body>
 </html>
