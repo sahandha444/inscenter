@@ -26,7 +26,7 @@
       background-size: cover;
       opacity: 0;
       transition: opacity 1s ease-in-out;
-      z-index: 0;
+      z-index: 1;
     }
     .slide.active {
       opacity: 1;
@@ -38,15 +38,15 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.3); /* Was: black */
+      background-color: rgba(0, 0, 0, 1); /* Was: black */
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.5s ease-in-out;
-      z-index: 1;
+      z-index: 2;
     }
 
     .overlay.show {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 1);
        opacity: 1;
     }
   
@@ -218,19 +218,36 @@
 
     });
 
-    const slides = document.querySelectorAll('.slide');
-    const overlay = document.getElementById('overlay');
-    let current = 0;
-    function showNextSlide() {
-      overlay.classList.add('show');
-      setTimeout(() => {
-        slides[current].classList.remove('active');
-        current = (current + 1) % slides.length;
-        slides[current].classList.add('active');
+      const slides = document.querySelectorAll('.slide');
+      const overlay = document.getElementById('overlay');
+      let current = 0;
+
+      function showNextSlide() {
         overlay.classList.remove('show');
-      }, 500);
-    }
-    setInterval(showNextSlide, 10000);
+        void overlay.offsetWidth; // force reflow
+        overlay.classList.add('show');
+
+        // Step 1: fade out current slide by removing 'active'
+        slides[current].classList.remove('active');
+
+        // Step 2: prepare next index
+        const next = (current + 1) % slides.length;
+
+        // Step 3: slight delay before showing next slide to allow crossfade
+        setTimeout(() => {
+          slides[next].classList.add('active');
+          current = next;
+
+          // Fade out overlay
+          setTimeout(() => {
+            overlay.classList.remove('show');
+          }, 500); // fade out
+        }, 100); // short delay to allow fading transition
+      }
+
+      setInterval(showNextSlide, 8000);
+
+
 
   const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (isTouch) {
