@@ -52,7 +52,7 @@
       width: 25px;
       background-color: white;
       margin: 4px 0;
-      transition: transform 1s ease;
+      transition: transform 0.3s ease;
     }
     .menu li.dropdown {
         position: relative;
@@ -123,17 +123,26 @@
 
     @media (max-width: 768px) {
       .menu {
-        display: none;
         flex-direction: column;
         background-color: #00274d;
         position: absolute;
         top: 60px;
         right: 0;
         width: 100%;
-        padding: 1rem;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        padding: 0 1rem;
+        transition: max-height 0.4s ease,
+      opacity 0.4s ease,
+      padding-top 0.3s ease,
+      padding-bottom 0.3s ease;
       }
       .menu.show {
-        display: flex;
+        max-height: 500px; /* enough height to show all menu items */
+        opacity: 1;
+        padding: 1rem;
+        overflow:visible;
       }
       .menu-toggle {
         display: flex;
