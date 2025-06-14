@@ -52,7 +52,7 @@
       width: 25px;
       background-color: white;
       margin: 4px 0;
-      transition: transform 0.3s ease;
+      transition: height 0.3s ease;
     }
     .menu li.dropdown {
         position: relative;
