@@ -16,6 +16,20 @@
       color: #333;
       margin: 0;
     }
+    .gallery-banner {
+      background: url('banner1.jpg') center center / cover no-repeat;
+      height: 30vh; /* 25% of screen height */
+      width: 100%;
+      background-color: black;
+      z-index: 2;
+      border: 1px solid black;
+      /*background: url('lab-banner.jpg') center/cover no-repeat;*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+       color: white;
+       font-size: larger;
+    }
 
     .gallery-header {
       background-color: #003366;
@@ -71,6 +85,9 @@
       .gallery-header h1 {
         font-size: 1.8rem;
       }
+      .about-banner {
+        height: 90px;
+      }
     }
   </style>
 </head>
@@ -100,10 +117,11 @@
   </nav>
 
   <!-- HEADER -->
-  <section class="gallery-header">
-    <h1>Photo Gallery</h1>
-    <p>Moments from our labs, field work, and scientific discoveries</p>
-  </section>
+   <div class="gallery-banner">
+        <h1>Photo Gallery</h1>
+   <!--<p>Moments from our labs, field work, and scientific discoveries</p>--> 
+    
+  </div>
 
   <!-- GALLERY -->
   <section class="gallery-grid">
