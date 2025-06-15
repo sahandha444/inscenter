@@ -1,118 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | Centre for Laboratory Services</title>
+  <meta name="description" content="Gallery of laboratory activities at Faculty of Science, UOR.">
+  <link rel="icon" href="scifaclogo.png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="header&footer.css">
+
   <style>
     body {
       font-family: 'Roboto Condensed', Arial, sans-serif;
       background-color: #f0f2f5;
-      margin: 0;
-      padding: 0;
       color: #333;
+      margin: 0;
     }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-      letter-spacing: 1px;
-    }
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: #00274d;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      color: white;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .menu { /* existing menu styles */}
-    .menu-toggle { /* existing styles */}
-    .menu li a, .dropdown-content { /* existing styles */ }
 
-    .gallery-banner {
-      background: linear-gradient(to right, #00274d, #00509e);
+    .gallery-header {
+      background-color: #003366;
       color: white;
       text-align: center;
-      padding: 4rem 1rem 2rem;
+      padding: 3rem 1rem 2rem;
     }
-    .gallery-banner h1 {
+
+    .gallery-header h1 {
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
-      font-weight: 400;
-      font-size: 2rem;
     }
 
-    .gallery-container {
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      grid-auto-rows: 180px;
-      gap: 1rem;
-      padding: 1rem;
-      max-width: 1200px;
-      margin: 2rem auto;
-    }
-    .gallery-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, filter 0.2s ease;
-      filter: brightness(0.95);
-    }
-    .gallery-container img:hover {
-      transform: scale(1.05);
-      filter: brightness(1);
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      padding: 3rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    footer {
-      background-color: #00274d;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    .footer-link {
-      color: #ffcc00;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.1rem;
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.4s ease;
     }
-    .footer-link:hover { text-decoration: underline; color: #ffffff; }
-    .watermark {
-      font-size: 0.6rem;
-      color: #aaa;
-      margin-top: 1rem;
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .horizontal img {
+      aspect-ratio: 4 / 3;
+    }
+
+    .vertical img {
+      aspect-ratio: 3 / 4;
     }
 
     @media (max-width: 768px) {
-      .gallery-banner {
-        padding: 3rem 1rem 1rem;
-      }
-      .gallery-banner h1 {
-        font-size: 1.6rem;
-      }
-      .gallery-container {
-        grid-auto-rows: 150px;
-        gap: 0.7rem;
+      .gallery-header h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- NAVBAR -->
   <nav>
     <div class="logo">Instrument Center</div>
-    <div class="menu-toggle" id="toggleMenu"><span></span><span></span><span></span></div>
+    <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
     <ul class="menu" id="menu">
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
-        <a href="Services.html">Services</a>
+        <a href="Services.html" class="dropdown-toggle">Services ▾</a>
         <ul class="dropdown-content">
           <li><a href="Services.html#water-quality">Water Quality</a></li>
           <li><a href="Services.html#soil-tests">Soil Tests</a></li>
@@ -124,36 +93,56 @@
         </ul>
       </li>
       <li><a href="About.html">About</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="Gallery.html">Gallery</a></li>
     </ul>
   </nav>
 
-  <div class="gallery-banner">
-    <h1>Our Gallery</h1>
-    <p>Explore snapshots from our laboratory and field activities</p>
-  </div>
+  <!-- HEADER -->
+  <section class="gallery-header">
+    <h1>Photo Gallery</h1>
+    <p>Moments from our labs, field work, and scientific discoveries</p>
+  </section>
 
-  <div class="gallery-container">
-    <img src="images/Gel electrophoresisi.jpg" alt="Vertical lab setup">
-    <img src="images/PXL_20250606_091248709.MP.jpg" alt="Horizontal equipment bench">
-    <img src="images/vertical2.jpg" alt="Lab instrument vertical">
-    <img src="images/horizontal2.jpg" alt="Field sample collection">
-    <img src="images/vertical3.jpg" alt="Vertical sample storage">
-    <img src="images/horizontal3.jpg" alt="Team working in the lab">
-  </div>
+  <!-- GALLERY -->
+  <section class="gallery-grid">
+    <!-- Mix of horizontal and vertical -->
+    <div class="gallery-item horizontal"><img src="gallery/h1.jpg" alt=""></div>
+    <div class="gallery-item vertical"><img src="gallery/v1.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h2.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h3.jpg" alt=""></div>
+    <div class="gallery-item vertical"><img src="gallery/v2.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h4.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h5.jpg" alt=""></div>
+    <div class="gallery-item vertical"><img src="gallery/v3.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h6.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h7.jpg" alt=""></div>
+    <div class="gallery-item vertical"><img src="gallery/v4.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h8.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h9.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h10.jpg" alt=""></div>
+    <div class="gallery-item vertical"><img src="gallery/v5.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h11.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h12.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h13.jpg" alt=""></div>
+    <div class="gallery-item vertical"><img src="gallery/v6.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h14.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h15.jpg" alt=""></div>
+    <div class="gallery-item horizontal"><img src="gallery/h16.jpg" alt=""></div>
+  </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 Centre for Laboratory Services, Faculty of Science, University of Ruhuna</p>
     <p><a href="About.html#contact" class="footer-link">Contact Us</a></p>
-    <div class="watermark">Web design by J.G.D.S.D. Jayasinghe, DCS, UOR.</div>
+    <p class="watermark">Web design by J.G.D.S.D. Jayasinghe, DCS, UOR.</p>
   </footer>
 
   <script>
-    const toggle = document.getElementById('toggleMenu');
+    const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
       menu.classList.toggle('show');
+      toggle.classList.toggle('open');
     });
   </script>
 
