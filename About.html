@@ -29,6 +29,20 @@
       z-index: 2;
       border: 1px solid black;
     }
+    .about-banner {
+      background: url('banner1.jpg') center center / cover no-repeat;
+      height: 30vh; /* 25% of screen height */
+      width: 100%;
+      background-color: black;
+      z-index: 2;
+      border: 1px solid black;
+      /*background: url('lab-banner.jpg') center/cover no-repeat;*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+       color: white;
+       font-size: larger;
+    }
 
     .container {
       max-width: 1000px;
@@ -93,6 +107,11 @@
       padding-top: 20px;
       border-top: 2px solid #3498db;
     }
+    @media (max-width: 768px){
+      .about-banner {
+        height: 90px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -117,7 +136,10 @@
       <li><a href="About.html">About</a></li>
     </ul>
   </nav>
-  <div class="banner"></div>
+  <div class="about-banner">
+    
+    <h1 style="color: white;">About Us</h1>
+  </div>
 
   <div class="container">
     <h2>Management Committee</h2>
