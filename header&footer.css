@@ -142,6 +142,26 @@
         .menu-toggle.open span:nth-child(3) {
           transform: rotate(-45deg) translate(5px, -5px);
         }
+    .contact-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ffcc00;
+        color: #00274d;
+        font-weight: bold;
+        padding: 0.8rem 1.2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        z-index: 1002;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .contact-button:hover {
+        background-color: #00274d;
+        color: #ffcc00;
+      }
+
 
 
     @media (max-width: 768px) {
@@ -174,6 +194,16 @@
       footer {
         font-size: 0.9rem;
         padding: 1rem;
+      }
+      .contact-button {
+         display: block;
+      }
+
+    }
+
+    @media (min-width: 769px) {
+      .contact-button {
+        display: none;
       }
     }
 
