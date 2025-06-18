@@ -89,6 +89,56 @@
         height: 90px;
       }
     }
+
+    /* Lightbox Styles */
+    
+    .lightbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .lightbox.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+
+    .lightbox.show .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .lightbox .close:hover {
+      color: #bbb;
+    }
+
+
   </style>
 </head>
 <body>
@@ -156,6 +206,12 @@
     <p><a href="About.html#contact" class="footer-link">Contact Us</a></p>
     <p class="watermark">Web design by J.G.D.S.D. Jayasinghe, DCS, UOR.</p>
   </footer>
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
 
   <script>
     const toggle = document.getElementById('menu-toggle');
@@ -164,6 +220,33 @@
       menu.classList.toggle('show');
       toggle.classList.toggle('open');
     });
+
+    
+    
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add("show");
+      });
+    });
+
+    closeBtn.onclick = () => {
+      lightbox.classList.remove("show");
+    }
+
+    window.onclick = (event) => {
+      if (event.target === lightbox) {
+        lightbox.classList.remove("show");
+      }
+    }
+
+
+
   </script>
 
 </body>
