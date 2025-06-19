@@ -153,6 +153,10 @@
       .indented-list{
         margin-left: 1.5rem;
       }
+      .slide-1 {
+        background-image: url('home image2.jpg');
+      }
+      
     }
   </style>
 </head>
@@ -180,10 +184,23 @@
   </nav>
 
   <div class="slider">
-    <div class="overlay" id="overlay"></div>
-    <div class="slide active" style="background-image: url('home image1.jpg');"></div>
-    <div class="slide" style="background-image: url('home image2.jpg');"></div>
-    <div class="slide" style="background-image: url('home image3.jpg');"></div>
+  <div class="overlay" id="overlay"></div>
+
+    <div class="slide active" 
+        style="background-image: url('home image1 pc.png');" 
+        data-mobile-src="home image1.jpg"
+        data-desktop-src="home image1 pc.png"></div>
+
+    <div class="slide" 
+        style="background-image: url('home image2.jpg');" 
+        data-mobile-src="home image2.jpg"
+        data-desktop-src="home image2.jpg"></div>
+
+    <div class="slide" 
+        style="background-image: url('home image3 pc.png');" 
+        data-mobile-src="home image3.jpg"
+        data-desktop-src="home image3 pc.png"></div>
+  </div>
   </div>
 
   <section class="welcomebg" id="welcome">
@@ -246,27 +263,43 @@
       const overlay = document.getElementById('overlay');
       let current = 0;
 
+      function updateImages() {
+      const isMobile = window.innerWidth < 769;
+
+      slides.forEach(slide => {
+        const desktopSrc = slide.getAttribute('data-desktop-src');
+        const mobileSrc = slide.getAttribute('data-mobile-src');
+
+        if (isMobile && mobileSrc) {
+          slide.style.backgroundImage = `url('${mobileSrc}')`;
+        } else if (desktopSrc) {
+          slide.style.backgroundImage = `url('${desktopSrc}')`;
+        }
+      });
+    }
+
+      // Call on page load
+      updateImages();
+
+      // Call on resize
+      window.addEventListener('resize', updateImages);
+
       function showNextSlide() {
         overlay.classList.remove('show');
         void overlay.offsetWidth; // force reflow
         overlay.classList.add('show');
 
-        // Step 1: fade out current slide by removing 'active'
         slides[current].classList.remove('active');
-
-        // Step 2: prepare next index
         const next = (current + 1) % slides.length;
 
-        // Step 3: slight delay before showing next slide to allow crossfade
         setTimeout(() => {
           slides[next].classList.add('active');
           current = next;
 
-          // Fade out overlay
           setTimeout(() => {
             overlay.classList.remove('show');
-          }, 500); // fade out
-        }, 100); // short delay to allow fading transition
+          }, 500);
+        }, 100);
       }
 
       setInterval(showNextSlide, 8000);
