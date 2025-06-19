@@ -193,7 +193,7 @@
 
 
     @media (max-width: 768px) {
-      .logo{font-size: 1.5rem;}
+      .logo{font-size: 1.4rem;}
       .menu {
         flex-direction: column;
         background-color: #00274d;
