@@ -48,8 +48,39 @@
        color: white;
        font-size: larger;
     }
+    .search-bar-container {
+      background-color: #f0f2f5; /* same as body */
+      text-align: center;
+      padding: 2rem 1rem;
+    }
 
+    #searchInput {
+      width: 90%;
+      max-width: 500px;
+      padding: 12px 18px;
+      font-size: 1rem;
+      font-family: 'Roboto Condensed', Arial, sans-serif;
+      border: 2px solid #ccc;
+      border-radius: 30px;
+      background-color: white;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
 
+    #searchInput:focus {
+      border-color: #00274d;
+      box-shadow: 0 0 8px rgba(0, 39, 77, 0.2);
+      outline: none;
+    }
+    #noResultsMessage {
+      display: none; /* Hidden by default */
+      text-align: center;
+      margin: 1rem 0;
+      color: #555;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-family: 'Roboto Condensed', Arial, sans-serif;
+    }
     #tables{
         padding: 2rem;
         
@@ -179,7 +210,12 @@
     
     <h1 style="color: white;">Laboratory Services</h1>
   </div>
-
+  <div class="search-bar-container">
+    <input type="text" id="searchInput" placeholder="🔍 Search services..." />
+  </div>
+  <div id="noResultsMessage" style="display:none; text-align:center; margin: 1rem; color:#555; font-weight:600;">
+    No results found.
+  </div>
   <div id="tables">
     <div id="water-quality">
         <div class="table-container"><table>
@@ -512,7 +548,39 @@
     <span class="button-icon">📞</span>
   </a>
   <script>
- 
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+  const searchTerm = this.value.toLowerCase().trim();
+  const tables = document.querySelectorAll('.table-container');
+  let anyTableVisible = false;
+  tables.forEach(container => {
+    const table = container.querySelector('table');
+    const rows = table.querySelectorAll('tbody tr');
+    let anyRowVisible = false;
+    rows.forEach(row => {
+      const rowText = row.textContent.toLowerCase();
+      const match = rowText.includes(searchTerm);
+      row.style.display = match ? '' : 'none';
+      if (match) anyRowVisible = true;
+    });
+    // Show/hide entire table container based on row visibility
+    container.style.display = anyRowVisible ? '' : 'none';
+    // Show/hide bottom note paragraph (<p>) if exists after container
+    const note = container.parentElement.querySelector('p');
+    if (note && note.tagName.toLowerCase() === 'p') {
+      note.style.display = anyRowVisible ? '' : 'none';
+    }
+    if (anyRowVisible) anyTableVisible = true;
+  });
+  // Show/hide no results message if none of the tables visible
+  const noResults = document.getElementById('noResultsMessage');
+  if (noResults) {
+    noResults.style.display = anyTableVisible ? 'none' : 'block';
+  }
+});
+
+
+
     const toggle = document.getElementById('menu-toggle');
     const menu = document.getElementById('menu');
     toggle.addEventListener('click', () => {
@@ -520,6 +588,8 @@
       document.body.classList.toggle('menu-open');
       toggle.classList.toggle('open');
     });
+
+    
 
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
   if (isTouch) {

@@ -102,10 +102,56 @@
     }
 
     .contact {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 2px solid #3498db;
+      margin-bottom: 15px;
+      font-size: 1.4rem;
+      border-bottom: 2px solid #3498db;
+      display: inline-block;
+      padding-bottom: 5px;
     }
+
+    .contact p {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .contact p strong {
+      color: #00274d;
+      font-size: 1.1rem;
+    }
+
+    .contact-link {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+      color: #216a94;
+    }
+
+    .map-btn {
+      font-size: 0.9rem;
+      padding: 4px 10px;
+      color: #3498db;
+      background-color: transparent;
+      border: 1px solid #3498db;
+      border-radius: 4px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .map-btn:hover {
+      background-color: #3498db;
+      color: #fff;
+    }
+ 
+
+    
+
     @media (max-width: 768px){
       .about-banner {
         height: 90px;
@@ -212,11 +258,11 @@
 
     <!-- Contact Section -->
     <div class="contact" id="contact">
-      <h3>Contact</h3>
+      <h3>📞 Contact</h3>
       <p><strong>Prof. W.G. Shirani Manel Kumari</strong></p>
-      <p>Phone: 0775900151</p>
-      <p>Email:  cls@sci.ruh.ac.lk</p>
-      <a href="https://maps.app.goo.gl/J6zdS73sVAPJpfaP9" target="_blank">Google Map to Faculty Complex</a>
+      <p>Phone: <a href="tel:0775900151" class="contact-link">0775900151</a></p>
+      <p>Email: <a href="mailto:cls@sci.ruh.ac.lk" class="contact-link">cls@sci.ruh.ac.lk</a></p>
+      <a href="https://maps.app.goo.gl/J6zdS73sVAPJpfaP9" target="_blank" class="map-btn" title="Open map">Google Map to Faculty Complex</a>
     </div>
   </div>
   <footer>
