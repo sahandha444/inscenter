@@ -259,20 +259,18 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-    const contactBtn = document.querySelector(".contact-button");
+    const scrollLinks = document.querySelectorAll(".contact-button, .footer-link");
     const contactSection = document.getElementById("contact");
     const offset = 150;
 
     function scrollWithOffset(element, offset = 0, duration = 600) {
       const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
-      const startY = window.scrollY - 100; // Scroll from slightly above, always
+      const startY = window.scrollY - 100; // Always start from a little above
       const distance = targetY - startY;
       let startTime = null;
 
       function easeInOut(t) {
-        return t < 0.5
-          ? 2 * t * t
-          : -1 + (4 - 2 * t) * t;
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
       }
 
       function animation(currentTime) {
@@ -288,13 +286,13 @@
       requestAnimationFrame(animation);
     }
 
-    if (contactBtn && contactSection) {
-      contactBtn.addEventListener("click", (e) => {
+    scrollLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
         e.preventDefault();
         scrollWithOffset(contactSection, offset);
       });
-    }
     });
+  });
 
    </script>
 
