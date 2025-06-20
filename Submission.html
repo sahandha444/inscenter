@@ -208,10 +208,10 @@
         <div class="footer-content">
         <p>&copy; 2025 Center for Laboratory Services, <a class="footer-link2" href="https://www.sci.ruh.ac.lk/FacultyofScience/">Faculty of Science</a>,<a class="footer-link2" href="https://ruh.ac.lk/index.php/en/"> University of Ruhuna</a></p>
         <a href="Submission.html#contact" class="footer-link">Contact Us</a>      
-        <p class="watermark">Web design by <a href="https://www.linkedin.com/in/sahan-jayasinghe-9378472a9/">J.G.D.S.D. Jayasinghe</a>, DCS, UOR.</p>
+        <p class="watermark">Web design by <a href="https://www.linkedin.com/in/sahan-jayasinghe-9378472a9/" target="_blank">J.G.D.S.D. Jayasinghe</a>, DCS, UOR.</p>
         </div>
     </footer>  
-    <a href="Submission.html#contact" class="contact-button">
+    <a href="Submission.html#contact" id="contact-button" class="contact-button">
         <span class="button-text">Contact Us</span>
         <span class="button-icon">📞</span>
     </a>
@@ -257,7 +257,26 @@
         }
         });
     }
-    </script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const contactBtn = document.querySelector('.contact-button');
+      const contactSection = document.getElementById('contact');
+      const OFFSET = 100; // adjust this as needed
+
+      contactBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const sectionTop = contactSection.getBoundingClientRect().top + window.pageYOffset;
+
+        window.scrollTo({
+          top: sectionTop - OFFSET,
+          behavior: 'smooth'
+        });
+      });
+    });
+
+
+   </script>
 
     </body>
     </html>
