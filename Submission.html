@@ -258,23 +258,43 @@
         });
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const contactBtn = document.querySelector('.contact-button');
-      const contactSection = document.getElementById('contact');
-      const OFFSET = 100; // adjust this as needed
+    document.addEventListener("DOMContentLoaded", () => {
+    const contactBtn = document.querySelector(".contact-button");
+    const contactSection = document.getElementById("contact");
+    const offset = 150;
 
-      contactBtn.addEventListener('click', function (e) {
+    function scrollWithOffset(element, offset = 0, duration = 600) {
+      const targetY = element.getBoundingClientRect().top + window.pageYOffset - offset;
+      const startY = window.scrollY - 100; // Scroll from slightly above, always
+      const distance = targetY - startY;
+      let startTime = null;
+
+      function easeInOut(t) {
+        return t < 0.5
+          ? 2 * t * t
+          : -1 + (4 - 2 * t) * t;
+      }
+
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const ease = easeInOut(progress);
+        window.scrollTo(0, startY + distance * ease);
+
+        if (progress < 1) requestAnimationFrame(animation);
+      }
+
+      requestAnimationFrame(animation);
+    }
+
+    if (contactBtn && contactSection) {
+      contactBtn.addEventListener("click", (e) => {
         e.preventDefault();
-
-        const sectionTop = contactSection.getBoundingClientRect().top + window.pageYOffset;
-
-        window.scrollTo({
-          top: sectionTop - OFFSET,
-          behavior: 'smooth'
-        });
+        scrollWithOffset(contactSection, offset);
       });
+    }
     });
-
 
    </script>
 
