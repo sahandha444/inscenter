@@ -135,10 +135,16 @@
         }
 
         .watermark {
-        font-size: 0.7rem;
-        color: #aaa;
+        font-size: 0.75rem;
+        color: #9a9a9a;
         }
-
+        .watermark a{
+          color: #cbcbcb;
+          text-decoration: none;
+        }
+        .watermark a:hover{
+          color: #ffffff;
+        }
         .menu-toggle.open span:nth-child(1) {
           transform: rotate(45deg) translate(5px, 5px);
         }
@@ -231,9 +237,7 @@
         font-size: 0.9rem;
         padding: 1rem;
       }
-      footer 
-        
-      }
+    
       .button-text {
         display: none;
       }
@@ -253,7 +257,8 @@
       .watermark {
         font-size: 0.65rem;
       }
-
     }
+
+    
 
     
