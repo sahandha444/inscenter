@@ -148,6 +148,14 @@
         .menu-toggle.open span:nth-child(3) {
           transform: rotate(-45deg) translate(5px, -5px);
         }
+      .footer-link2{
+        color: #ffcc00;
+        text-decoration: none;
+      }
+      .footer-link2:hover {
+        text-decoration: underline;
+        color: #ffffff;
+        }
     .contact-button {
         position: fixed;
         bottom: 20px;
@@ -223,6 +231,9 @@
         font-size: 0.9rem;
         padding: 1rem;
       }
+      footer 
+        
+      }
       .button-text {
         display: none;
       }
@@ -238,10 +249,7 @@
         height: 52px;
         justify-content: center;
       }
-      footer {
-        font-size: 0.9rem;
-        padding: 1rem;
-      }
+    
       .watermark {
         font-size: 0.65rem;
       }
