@@ -136,6 +136,13 @@
       align-items: center;
       gap: 0.5rem;
     }
+    .university-logos img{
+      height: 70px; 
+      display: flex; 
+      margin: 0 15px;
+      margin-top: 10px; 
+      float: left;
+    }
 
     .footer-link {
         color: #ffcc00;
