@@ -137,6 +137,11 @@
       gap: 0.5rem;
     }
 
+    footer img{
+      height: 60px;
+      margin: 0 15px;
+    }
+
     .footer-link {
         color: #ffcc00;
         font-weight: bold;
