@@ -229,7 +229,7 @@
 
 
     @media (max-width: 768px) {
-      .logo span{font-size: 1.3rem;}
+      .logo span{font-size: 1.2rem;}
       .menu {
         flex-direction: column;
         background-color: #00274d;
