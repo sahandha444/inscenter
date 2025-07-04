@@ -137,7 +137,58 @@
     .lightbox .close:hover {
       color: #bbb;
     }
+    .content-box {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 1400px;
+        margin: 30px auto;
+        }
 
+    .content-box p {
+        font-size: 1rem;
+        color: #333;
+        margin: 8px 0;
+        }
+    .content-box p strong {
+      color: #00274d;
+      font-size: 1.1rem;
+    }
+    .disclaimer-box {
+      background-color: #e2e6ea;
+      color: #00274d;
+      padding: 1.5rem 2rem;
+      margin: 3rem auto 2rem auto;
+      max-width: 1300px;
+      border-left: 4px solid #00274d;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    .disclaimer-box strong {
+      color: #003b73;
+    }
+
+    .disclaimer-box .icon {
+      font-size: 1.2rem;
+      margin-right: 0.2rem;
+      vertical-align: bottom;
+    }
+
+    /* Animation */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
   </style>
 </head>
@@ -203,7 +254,14 @@
     <!-- <div class="gallery-item horizontal"><img src="gallery/h1.jpg" alt=""></div> -->
     <div class="gallery-item horizontal"><img src="gallery/h14.jpg" alt=""></div>
   </section>
-
+  <div class="content-box disclaimer-box">
+    <p><span class="icon">⚠️</span>
+    All images and logos used on this website are the exclusive property of the Center for Laboratory Services, Faculty of Science, University of Ruhuna 
+    (except for the official logos of the Faculty of Science and University of Ruhuna). Unauthorized use, reproduction, or distribution is strictly prohibited.
+    </p>
+  </div>
+  </i>
+  
   <!-- FOOTER -->
   <footer>
   <div class="footer-content">
@@ -238,7 +296,6 @@
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
   </div>
-
 
   <script>
     const toggle = document.getElementById('menu-toggle');
